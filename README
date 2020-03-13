@@ -1,0 +1,20 @@
+Microservice
+
+This is a sample for my Microservices.
+
+This project with the complete micro service demo system in Docker containers. The services are implemented in Java using Spring.
+
+It uses two microservices:
+
+    Cashback calculation 
+    Cashback status 
+    
+ Technologies
+ 
+    Kafka
+    Spring
+  
+How To Run
+
+The demo can be run with Docker Machine and Docker Compose or local.
+
