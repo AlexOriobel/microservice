@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -27,6 +28,10 @@ public class Client {
 
 	@Column(nullable = false)
 	private String email;
+
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn
+	private List<OrderS> orderSList;
 
 
 }

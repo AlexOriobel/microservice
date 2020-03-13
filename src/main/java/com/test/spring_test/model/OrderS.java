@@ -29,8 +29,5 @@ public class OrderS implements Serializable {
 	@Column
 	private Double cost;
 
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn
-	private Client client;
 
 }

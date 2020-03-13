@@ -32,18 +32,20 @@ public class SpringTestApplication {
 
     private void addTestOrder() {
 
-        Client clienti = new Client();
-        clienti.setPhone("Sevchik");
-        clienti.setName("Vasa");
-        clienti.setEmail("Pupkin");
-        clienOreder.addNewClient(clienti);
-
         OrderS orderSi = new OrderS();
         orderSi.setData("20.20.20");
         orderSi.setOrd("Зубные палочки");
         orderSi.setCost(900000.0);
-        orderSi.setClient(clienti);
         clienOreder.addNewOrder(orderSi);
 
+
+        Client clienti = new Client();
+        clienti.setPhone("Sevchik");
+        clienti.setName("Vasa");
+        clienti.setEmail("Pupkin");
+        List<OrderS>orderSLong = new ArrayList<>();
+        orderSLong.add(orderSi);
+        clienti.setOrderSList(orderSLong);
+        clienOreder.addNewClient(clienti);
     }
 }
