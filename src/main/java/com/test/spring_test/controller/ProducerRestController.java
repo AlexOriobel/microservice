@@ -20,9 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProducerRestController {
 
-	@Autowired
-	private MappingConfig modelMapper;
-
+	private final MappingConfig modelMapper;
 	private final Producer producer;
 	private final OrdersRepository ordersRepository;
 	private final ClientRepository clientRepository;
