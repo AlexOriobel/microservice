@@ -5,7 +5,7 @@ services:
   service:
     image: client
     build:
-      context: ./
+      context: ../target
       dockerfile: Dockerfile
     container_name: sd
     network_mode: host

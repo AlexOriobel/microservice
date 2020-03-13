@@ -4,7 +4,7 @@ import com.test.spring_test.config.MappingConfig;
 import com.test.spring_test.dao.*;
 import com.test.spring_test.dto.CashBackDto;
 import com.test.spring_test.dto.ProcessResultDto;
-import com.test.spring_test.enumList.STATUS;
+import com.test.spring_test.enums.Status;
 import com.test.spring_test.model.ProcessResult;
 import com.test.spring_test.kafka.producer.Producer;
 import com.test.spring_test.model.CashBack;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProducerRestController {
 
 	@Autowired
-	MappingConfig modelMapper;
+	private MappingConfig modelMapper;
 
 	private final Producer producer;
 	private final OrdersRepository ordersRepository;
@@ -35,7 +35,7 @@ public class ProducerRestController {
 
 		CashBack cashBack = new CashBack();
 		ProcessResult processResult = new ProcessResult();
-		processResult.setStatus(STATUS.IN_PROGRESS);
+		processResult.setStatus(Status.IN_PROGRESS);
 		proccesResultRepository.save(processResult);
 		cashBack.setClient(clientRepository.findById(clientId)
 										   .get());

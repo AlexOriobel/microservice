@@ -4,10 +4,9 @@ import com.test.spring_test.dao.CashBackRepository;
 import com.test.spring_test.dao.MoneyRepository;
 import com.test.spring_test.dao.ProccesResultRepository;
 import com.test.spring_test.dto.CashBackDto;
-import com.test.spring_test.enumList.STATUS;
+import com.test.spring_test.enums.Status;
 import com.test.spring_test.model.CashBack;
 import com.test.spring_test.model.Money;
-import com.test.spring_test.model.ProcessResult;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -38,14 +37,14 @@ public class Consumer {
 			money.setPercent(2.0);
 			moneyRepository.save(money);
 			cashBack.getProcessResult()
-					.setStatus(STATUS.SUCCESS);
+					.setStatus(Status.SUCCESS);
 			cashBack.getProcessResult()
 					.setMoney(money);
 			proccesResultRepository.save(cashBack.getProcessResult());
 			cashBackRepository.save(cashBack);
 		} else {
 			cashBack.getProcessResult()
-					.setStatus(STATUS.ERROR);
+					.setStatus(Status.ERROR);
 			proccesResultRepository.save(cashBack.getProcessResult());
 		}
 

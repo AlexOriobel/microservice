@@ -1,8 +1,6 @@
 package com.test.spring_test.model;
 
-import com.test.spring_test.enumList.STATUS;
 import lombok.Data;
-import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.*;
 
